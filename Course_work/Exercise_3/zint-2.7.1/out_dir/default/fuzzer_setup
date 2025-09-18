@@ -1,0 +1,9 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=./frontend/zint
+AFL_CUSTOM_INFO_PROGRAM_ARGV=-b 13 -i @@
+AFL_CUSTOM_INFO_OUT=/zint/out_dir/default
+AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
+AFL_TRY_AFFINITY=1
+AFL_SKIP_CPUFREQ=1
+# command line:
+'afl-fuzz' '-i' '/zint/in_dir' '-o' '/zint/out_dir' '-Q' '--' './frontend/zint' '-b' '13' '-i' '@@'
