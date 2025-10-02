@@ -1,0 +1,8 @@
+FROM --platform=linux/amd64 ubuntu:latest
+
+RUN apt-get update && apt-get install -y \
+    nasm binutils vim gcc && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+
